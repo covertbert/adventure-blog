@@ -35,7 +35,6 @@ module.exports = {
     node: true,
     es6: true,
   },
-  plugins: ['@typescript-eslint', 'react'],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
