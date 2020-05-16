@@ -1,14 +1,11 @@
 {
-  "name": "adventure-blog",
+  "name": "bertie-blackman",
   "private": true,
-  "description": "An adventure blog",
-  "version": "0.1.0",
+  "description": "My site",
+  "version": "0.0.1",
   "license": "MIT",
-  "workspaces": [
-    "packages/frontend",
-    "packages/e2e"
-  ],
   "scripts": {
+    "bootstrap": "lerna bootstrap",
     "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js",
     "format": "prettier --write \"**/*.{js,json,md}\"",
     "type-check": "tsc --noEmit",
@@ -20,10 +17,11 @@
     "@typescript-eslint/parser": "^2.31.0",
     "eslint": "^7.0.0",
     "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-prettier": "^3.1.3",
     "eslint-plugin-cypress": "^2.10.3",
+    "eslint-plugin-prettier": "^3.1.3",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^4.0.2",
+    "lerna": "^3.21.0",
     "prettier": "2.0.4",
     "typescript": "^3.8.3"
   }
