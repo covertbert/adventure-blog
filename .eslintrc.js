@@ -1,11 +1,29 @@
 module.exports = {
-  parser: '@typescript-eslint/parser', // Specifies the ESLint parser
+  parser: '@typescript-eslint/parser',
+  plugins: ['@typescript-eslint'],
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:cypress/recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
+    'prettier',
     'prettier/@typescript-eslint',
-    'plugin:prettier/recommended',
+  ],
+  rules: {
+    'react/prop-types': 0, // Disable prop-types as we use TypeScript for type checking
+    '@typescript-eslint/explicit-function-return-type': 0,
+    'no-console': 1, // Avoid leaving console logs behind
+    'prefer-template': 1, // Prefer template strings
+  },
+  overrides: [
+    {
+      files: ['**/*.{test,tests}.{ts,tsx}'], // Feels unnecessary to enforce these rules in tests
+      rules: {
+        'react/display-name': 0,
+      },
+    },
   ],
   settings: {
     react: {
@@ -25,17 +43,4 @@ module.exports = {
     ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
     sourceType: 'module', // Allows for the use of imports
   },
-  rules: {
-    'react/prop-types': 'off', // Disable prop-types as we use TypeScript for type checking
-    '@typescript-eslint/explicit-function-return-type': 'off',
-  },
-  overrides: [
-    // Override some TypeScript rules just for .js files
-    {
-      files: ['*.js'],
-      rules: {
-        '@typescript-eslint/no-var-requires': 'off', //
-      },
-    },
-  ],
 }
